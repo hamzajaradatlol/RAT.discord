@@ -1,0 +1,5 @@
+colorama
+requests
+discord
+tk
+opencv-python
